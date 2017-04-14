@@ -1,0 +1,37 @@
+<div class='panel panel-primary' *ngIf='member'>
+    <div class='panel-heading' style='font-size:large'>
+        {{pageTitle + ': ' + member.firstName}}
+    </div>
+    <div class='panel-body'>
+        <div class='row'>
+            <img src="{{member.portrait}}"
+                 class="img-responsive center-block"
+                 style="max-height:300px;padding-bottom:50px"/>
+        </div>
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3'>occupation:</div>
+                    <div class='col-md-6'>{{member.occupation}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>company:</div>
+                    <div class='col-md-6'>{{member.company}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>motto:</div>
+                    <div class='col-md-6'>{{member.motto}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Availability:</div>
+                    <div class='col-md-6'>{{member.firstName}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='panel-footer'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+    </div>
+</div>

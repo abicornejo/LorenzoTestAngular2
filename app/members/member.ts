@@ -1,0 +1,22 @@
+export interface IMember{
+    id:number;
+    gender:string;
+    title:string;
+    firstName:string;
+    middleInitial:string;
+    surname:string;
+    streetAddress:string;
+    city:string;
+    state:string;
+    zipCode:string;
+    country:string;
+    email:string;
+    username:string;
+    birthday:string;
+    occupation:string;
+    company:string;
+    latitude:string;
+    longitude:string;
+    motto:string;
+    portrait:string;
+}

@@ -1,0 +1,68 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-2">Seacrh by:</div>
+            <div class="col-md-4">
+                <input type="text" [(ngModel)]='listFilter' />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Filtered by: {{listFilter}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="table-responsive">
+                    <table class="table" *ngIf='members && members.length'>
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Occupation</th>
+                            <th>Company</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor='let member of members | memberFilter:listFilter let i = index'  (click)="viewMember(member.firstName,member.portrait,member.occupation,member.company,member.motto);setClickedRow(i);" [class.active]="i == selectedRow">
+                            <td><a [routerLink]="['/member',member.id]"> {{member.firstName}}</a></td>
+                            <td>{{member.occupation}}</td>
+                            <td>{{member.company}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class='panel panel-primary' style="">
+                    <div class='panel-heading' style='font-size:large'>
+                        {{_firstName}}
+                    </div>
+                    <div class='panel-body'>
+                        <div class='row'>
+                            <img src="{{_portrait}}"
+                                 class="img-responsive center-block"
+                                 style="max-height:300px;padding-bottom:50px"/>
+                        </div>
+                        <div class='row'>
+                            <div class='col-md-12'>
+                                <div class='row'>
+                                    <div class='col-md-12'>{{_occupation}}</div>
+                                </div>
+                                <div class='row'>
+                                    <div class='col-md-12'>{{_company}}</div>
+                                </div>
+                                <div class='row'>
+                                    <div class='col-md-12'>{{_motto}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
